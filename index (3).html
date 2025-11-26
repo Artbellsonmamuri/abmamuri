@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engr. Artbellson B. Mamuri - Professional Profile</title>
+    <style>
+        :root {
+            --primary: #32B8C6;
+            --primary-dark: #21808D;
+            --primary-light: #50C8D6;
+            --background: #FFFFFF;
+            --surface: #F8FEFF;
+            --text: #1A2E35;
+            --text-secondary: #5A6C73;
+            --border: rgba(50, 184, 198, 0.2);
+            --shadow: rgba(50, 184, 198, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(50, 184, 198, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(50, 184, 198, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(80, 200, 214, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #f8feff 0%, #ffffff 50%, #f0feff 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 0;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            box-shadow: 0 8px 24px var(--shadow);
+            margin: 0 auto 24px;
+            object-fit: cover;
+            background: var(--surface);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.125rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+            padding: 20px;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--primary);
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface);
+            transform: translateY(-2px);
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            text-align: center;
+            padding: 32px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 32px 0;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 16px;
+            border: 4px solid var(--primary);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .qr-code:hover {
+            transform: scale(1.05);
+        }
+
+        .qr-instruction {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        /* Content Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        .card h2 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .card h3 {
+            color: var(--text);
+            font-size: 1.125rem;
+            margin: 20px 0 12px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--surface);
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px var(--shadow);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary);
+            transition: fill 0.3s;
+        }
+
+        .social-link:hover svg {
+            fill: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+            padding: 32px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 16px;
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 1.75rem;
+            }
+
+            .title {
+                font-size: 1rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .contact-bar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px;
+            }
+
+            .contact-item {
+                font-size: 0.85rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                gap: 12px;
+            }
+
+            .social-link {
+                width: 44px;
+                height: 44px;
+            }
+
+            .qr-code {
+                width: 160px;
+                height: 160px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 8px 6px;
+            }
+        }
+
+        /* Responsive - Tablet */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 90%;
+            }
+
+            .name {
+                font-size: 2.25rem;
+            }
+
+            .contact-bar {
+                gap: 16px;
+            }
+
+            .card {
+                padding: 28px;
+            }
+        }
+
+        /* Responsive - Large Desktop */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+
+            .card {
+                padding: 36px;
+            }
+        }
+
+        /* Improvements Badge */
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="public/mamuri.jpg" alt="Engr. Artbellson B. Mamuri" class="profile-photo">
+            <h1 class="name">Engr. Artbellson B. Mamuri</h1>
+            <p class="title">Science Research Specialist I</p>
+            <p class="subtitle">Registered Electronics Engineer (No. 52886)</p>
+            <p class="subtitle">Research Directorate, Mariano Marcos State University</p>
+        </div>
+
+        <!-- Contact Bar -->
+        <div class="contact-bar">
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>City of Batac, Ilocos Norte, 2906</span>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <a href="tel:+639482920644">+63 948 292 0644</a>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:abmamuri@mmsu.edu.ph">abmamuri@mmsu.edu.ph</a>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:uitso@mmsu.edu.ph">uitso@mmsu.edu.ph</a>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="public/cv.pdf" class="btn btn-primary" download>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Download CV
+            </a>
+            <a href="public/artvc.vcf" class="btn btn-secondary" download>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                Save Contact
+            </a>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="qr-section">
+            <h3 style="color: var(--primary-dark); margin-bottom: 16px;">Quick Contact</h3>
+            <img src="qr.jpg" alt="Contact QR Code" class="qr-code" onclick="downloadVCard()">
+            <p class="qr-instruction">📱 Scan or click the QR code to save contact instantly</p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/artbellson.mamuri" target="_blank" class="social-link" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/abmamuri/" target="_blank" class="social-link" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=A35SY1EAAAAJ&hl=en" target="_blank" class="social-link" title="Google Scholar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+            </a>
+            <a href="https://www.researchgate.net/profile/Artbellson-Mamuri" target="_blank" class="social-link" title="ResearchGate">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.366 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.401 0 0 1 .014-.938 15.821 15.821 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-.916c.344-.228.686-.35 1.21-.35.48 0 .933.095 1.227.286.295.19.537.475.638.876.04.148.07.37.09.605.02.234.036.505.036.865l.001.057H20.95c.094 0 .14-.047.14-.14v-.82a10.9 10.9 0 0 0-.043-1.207 8.365 8.365 0 0 0-.177-.93c-.235-.734-.604-1.26-1.175-1.65-.57-.39-1.305-.603-2.105-.603zM6.41 6.086c-.18 0-.31.062-.387.167-.078.104-.117.294-.117.57v11.29c0 .276.038.465.117.57.077.104.208.166.387.166h1.183c.18 0 .31-.062.387-.167.078-.104.117-.294.117-.57V6.823c0-.276-.038-.465-.117-.57-.077-.104-.208-.166-.387-.166H6.41zm2.768 0c-.18 0-.31.062-.387.167-.078.104-.117.294-.117.57v4.35h3.76V6.823c0-.276-.038-.465-.117-.57-.077-.104-.208-.166-.387-.166h-2.752z"/></svg>
+            </a>
+        </div>
+
+        <!-- Biography Card -->
+        <div class="card">
+            <h2>Professional Summary</h2>
+            <p>Electronics engineer and technology transfer professional with over 10 years of experience in instrumentation control, renewable energy, smart agriculture automation, and intellectual property management. Leads major R&D projects, secures patents and utility models, and mentors innovators at MMSU. Currently spearheading IP-TBM initiatives under the DOST-funded RAISE Phase II program, dedicated to advancing technology commercialization throughout the Ilocos Region.</p>
+            
+            <h3>Core Competencies</h3>
+            <ul>
+                <li>Instrumentation Control Systems</li>
+                <li>Smart Systems & IoT</li>
+                <li>Data Analytics & Home Automation</li>
+                <li>Smart Agriculture Systems</li>
+                <li>Renewable Energy Engineering</li>
+                <li>Intellectual Property Management</li>
+                <li>Technology Commercialization</li>
+            </ul>
+        </div>
+
+        <!-- Career History Card -->
+        <div class="card">
+            <h2>Career History & Key Positions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Position/Project</th>
+                        <th>Institution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024–Present</td>
+                        <td>IP-TBM Project Staff, RAISE Phase II</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                    <tr>
+                        <td>2022–Present</td>
+                        <td>Chief, University Innovation and Technology Support Office (UITSO)</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                    <tr>
+                        <td>2021–Present</td>
+                        <td>Member, Technical Working Group (TWG) for Laboratory Equipment Management and Maintenance</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                    <tr>
+                        <td>Mar 2022–2024</td>
+                        <td>Vice-Chair, University Inspection Team</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                    <tr>
+                        <td>2023–2025</td>
+                        <td>Project Staff, Bannuar Technology Business Incubator (DOST-MMSU)</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                    <tr>
+                        <td>2017–2021</td>
+                        <td>Patent Search Officer, UITSO</td>
+                        <td>Mariano Marcos State University</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- R&D Projects Card -->
+        <div class="card">
+            <h2>Selected R&D Projects</h2>
+            <ul>
+                <li>Development of Intellectual Property Management System (2024–present)</li>
+                <li>HEIRIT: DOST-MMSU Bannuar Technology Business Incubator (2023–2025)</li>
+                <li>IP-TBM Support to University Technology Acceleration Initiatives (2022–2023)</li>
+                <li>Controlled Indoor Propagation Nursery for Clean Garlic Planting Material (2020–2022)</li>
+                <li>Optimization & Automation of Lab-Scale Bioethanol Distillers (2018–2020)</li>
+                <li>Design and Development of Solar Pump Controller (2018–2019)</li>
+            </ul>
+        </div>
+
+        <!-- IP Publications Card -->
+        <div class="card">
+            <h2>Intellectual Property Publications</h2>
+            <h3>Patents Filed</h3>
+            <ul>
+                <li>Non-Caffeinated Beverage Formulated from Coconut Pulp (October 2024)</li>
+                <li>Smart Solar Pump Controller (October 2020)</li>
+                <li>Apparatus in Controlling Reflux Distiller (October 2020)</li>
+            </ul>
+            <h3>Utility Models</h3>
+            <ul>
+                <li>Modular Reflux Distiller (October 2020)</li>
+            </ul>
+        </div>
+
+        <!-- Awards Card -->
+        <div class="card">
+            <h2>Awards & Honors</h2>
+            <ul>
+                <li>Third Place, ICIERD 4th R&D Symposium - Design & Development of a Solar Pump Controller (October 2018)</li>
+                <li>Third Place, Patent Search Competition on Innovative Technical Solutions for Business (September 2022)</li>
+                <li>ASEAN Young Scientist Fellow - Pioneering Intellectual Property Program (2020)</li>
+                <li>Certified TISC Staff (WIPO, valid 2024–2029)</li>
+            </ul>
+        </div>
+
+        <!-- Education Card -->
+        <div class="card">
+            <h2>Education & Certifications</h2>
+            <h3>Academic Background</h3>
+            <p><strong>Bachelor of Science in Electronics Engineering</strong><br>
+            Cagayan State University, Carig Campus (2006–2012)</p>
+            
+            <h3>Professional Certifications</h3>
+            <ul>
+                <li>WIPO Foundation Certificate in Intellectual Property</li>
+                <li>WIPO Basics of Patent Drafting</li>
+                <li>WIPO Patent Information Search</li>
+                <li>FILIPINNOVATION ENTREPRENEURSHIP CORPS (FEC) - Cohort 2 (2024–2025)</li>
+                <li>SPRINT-STEP Training (2025)</li>
+                <li>Advanced Freedom to Operate (FTO) Training</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text"><strong>Engr. Artbellson B. Mamuri</strong></p>
+            <p class="footer-text">Science Research Specialist I | Innovation & Technology Transfer</p>
+            <div class="footer-divider"></div>
+            <p class="footer-text">Mariano Marcos State University</p>
+            <p class="footer-text">University Innovation and Technology Support Office</p>
+            <p class="footer-copyright">© 2025 Artbellson B. Mamuri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadVCard() {
+            const link = document.createElement('a');
+            link.href = 'public/artvc.vcf';
+            link.download = 'artvc.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show confirmation
+            alert('📇 Contact card downloaded! You can now import it to your contacts.');
+        }
+    </script>
+</body>
+</html>
